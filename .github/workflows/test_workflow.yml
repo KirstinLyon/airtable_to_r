@@ -1,4 +1,4 @@
-name: Pull Airtable Data
+name: Pull Airtable Data_test
 
 # Schedule this workflow to run daily (adjust the cron expression as needed)
 on:
