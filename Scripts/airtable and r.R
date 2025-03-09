@@ -8,6 +8,7 @@ PERSONAL_ACCESS_TOKEN<- "patk6waxUO69PLrzo.c5e8823b92cb1d1a7a7b6298c75d6550c92b0
 BASE_ID <- "appn19UZdWMJDGQyD"
 
 
+
 #set your personal token
 set_airtable_api_key(PERSONAL_ACCESS_TOKEN)
 

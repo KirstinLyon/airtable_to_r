@@ -1,0 +1,42 @@
+name: Pull Airtable Data
+
+# Schedule this workflow to run daily (adjust the cron expression as needed)
+on:
+  schedule:
+    - cron: '0 12 * * *'  # Runs daily at 12:00 UTC
+  workflow_dispatch:  # Allows manual triggering from GitHub UI
+
+jobs:
+  pull_data:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the code repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Step 2: Set up R (choose your preferred version)
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: '4.4.2'
+
+      # Step 3: Install required R packages
+      - name: Install required R packages
+        run: |
+          R -e 'install.packages("remotes")'
+          R -e 'remotes::install_github("bergant/rairtable")'
+          R -e 'install.packages("readr")'
+
+      # Step 4: Run the R script to pull data from Airtable
+      - name: Run Airtable script
+        env:
+          AIRTABLE_PAT: ${{ secrets.AIRTABLE_PAT }}  # Securely inject the Airtable PAT from GitHub Secrets
+        run: Rscript test.R  # Run the R script
+
+      # Step 5: Upload the pulled data as an artifact
+      - name: Upload Airtable data
+        uses: actions/upload-artifact@v4
+        with:
+          name: airtable-data
+          path: airtable_data.csv
