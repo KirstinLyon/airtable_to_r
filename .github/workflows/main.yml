@@ -35,7 +35,7 @@ jobs:
       - name: Install required R packages
         if: steps.cache-r-packages.outputs.cache-hit != 'true'
         run: |
-          R -e 'install.packages(c("tidyverse", "httr", "jsonlite"), lib = Sys.getenv("R_LIBS_USER"))'
+          R -e 'install.packages(c("dplyr", "readr"), lib = Sys.getenv("R_LIBS_USER"))'
 
       # Step 5: List files to verify script location
       - name: List files in the repository
@@ -46,7 +46,7 @@ jobs:
       - name: Run Airtable script
         env:
           AIRTABLE_PAT: ${{ secrets.AIRTABLE_PAT }}  # Securely inject the Airtable PAT from GitHub Secrets
-        run: Rscript Scripts/airtable_and_r.R  # Run the R script
+        run: Rscript scripts/airtable_and_r.R  # Run the R script
 
       # Step 7: Upload the pulled data as an artifact
       - name: Upload Airtable data
