@@ -16,4 +16,4 @@ table <- airtable(TABLE_NAME, BASE_ID)
 
 airtable_data <- read_airtable(table, id_to_col = TRUE, max_rows = 1000)
 
-print(PERSONAL_ACCESS_TOKEN)
+
