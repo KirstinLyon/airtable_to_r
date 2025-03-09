@@ -24,7 +24,7 @@ jobs:
       # Step 3: Install required R packages
       - name: Install required R packages
         run: |
-          R -e 'install.packages("rairtable")
+          R -e 'install.packages("rairtable")'
           R -e 'install.packages("readr")'
 
       # Step 4: Run the R script to pull data from Airtable
