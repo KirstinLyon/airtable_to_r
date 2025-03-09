@@ -24,7 +24,6 @@ jobs:
       # Step 3: Install required R packages
       - name: Install required R packages
         run: |
- #         R -e 'install.packages("rairtable")' || { echo "Failed to install rairtable"; exit 1; }
           R -e 'install.packages("tidyverse")' || { echo "Failed to install tidyverse"; exit 1; }
 
       # Step 4: List files to verify script location
