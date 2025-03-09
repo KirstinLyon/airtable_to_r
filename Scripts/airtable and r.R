@@ -11,12 +11,6 @@ BASE_ID <- "appn19UZdWMJDGQyD"
 #set your personal token
 set_airtable_api_key(PERSONAL_ACCESS_TOKEN)
 
-
-##https://airtable.com/appn19UZdWMJDGQyD/tblhWMLAZOUrILlDX/viwXcJzsBccQysekE?blocks=hide
-
-
-#table <- airtable('TB_moz', 'appn19UZdWMJDGQyD')
-
 table <- airtable(TABLE_NAME, BASE_ID)
 
 airtable_data <- read_airtable(table, id_to_col = TRUE, max_rows = 1000)
