@@ -1,13 +1,56 @@
-name: Main Workflow
+name: Pull Airtable Data
 
+# Schedule this workflow to run daily (adjust the cron expression as needed)
 on:
-  push:
-    branches:
-      - main
-  workflow_dispatch:
+  schedule:
+    - cron: '0 12 * * *'  # Runs daily at 12:00 UTC
+  workflow_dispatch:  # Allows manual triggering from GitHub UI
 
 jobs:
-  call-install-packages:
-    uses: ./.github/workflows/install_packages.yml
-    with:
-      r_script: "Scripts/airtable_and_r.R"  # Path to the R script to run
+  pull_data:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the code repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Step 2: Set up R (choose your preferred version)
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: '4.4.3'
+
+      # Step 3: Cache R packages
+      - name: Cache R packages
+        id: cache-r-packages
+        uses: actions/cache@v3
+        with:
+          path: ${{ env.R_LIBS_USER }}  # Path where R packages are installed
+          key: r-packages-${{ runner.os }}-${{ hashFiles('DESCRIPTION') }}  # Cache key based on DESCRIPTION file
+          restore-keys: |
+            r-packages-${{ runner.os }}-
+
+      # Step 4: Install required R packages (only if not cached)
+      - name: Install required R packages
+        if: steps.cache-r-packages.outputs.cache-hit != 'true'
+        run: |
+          R -e 'install.packages(c("tidyverse", "httr", "jsonlite"), lib = Sys.getenv("R_LIBS_USER"))'
+
+      # Step 5: List files to verify script location
+      - name: List files in the repository
+        run: |
+          ls -R
+
+      # Step 6: Run the R script to pull data from Airtable
+      - name: Run Airtable script
+        env:
+          AIRTABLE_PAT: ${{ secrets.AIRTABLE_PAT }}  # Securely inject the Airtable PAT from GitHub Secrets
+        run: Rscript Scripts/airtable_and_r.R  # Run the R script
+
+      # Step 7: Upload the pulled data as an artifact
+      - name: Upload Airtable data
+        uses: actions/upload-artifact@v4
+        with:
+          name: airtable-data
+          path: airtable_data.csv
