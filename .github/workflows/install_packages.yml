@@ -31,4 +31,4 @@ jobs:
           Rscript -e 'install.packages(c("dplyr", "readr"), lib = Sys.getenv("R_LIBS_USER"))'
 
       - name: Run R script
-        run: Rscript scripts/r_packages.R
+        run: Rscript Scripts/r_packages.R

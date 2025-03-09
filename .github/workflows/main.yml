@@ -46,7 +46,7 @@ jobs:
       - name: Run Airtable script
         env:
           AIRTABLE_PAT: ${{ secrets.AIRTABLE_PAT }}  # Securely inject the Airtable PAT from GitHub Secrets
-        run: Rscript scripts/airtable_and_r.R  # Run the R script
+        run: Rscript Scripts/airtable_and_r.R  # Run the R script
 
       # Step 7: Upload the pulled data as an artifact
       - name: Upload Airtable data
