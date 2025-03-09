@@ -1,0 +1,5 @@
+Package: my-r-project
+Version: 1.0
+Depends:
+  readr,
+  dplyr
