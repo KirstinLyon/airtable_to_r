@@ -19,12 +19,13 @@ jobs:
       - name: Set up R
         uses: r-lib/actions/setup-r@v2
         with:
-          r-version: '4.4.2'
+          r-version: '4.4.3'
 
       # Step 3: Install required R packages
       - name: Install required R packages
         run: |
-          R -e 'install.packages("tidyverse")' || { echo "Failed to install tidyverse"; exit 1; }
+          R -e 'install.packages("dplyr")' || { echo "Failed to install dplyr"; exit 1; }
+          R -e 'install.packages("readr")' || { echo "Failed to install readr"; exit 1; }
 
       # Step 4: List files to verify script location
       - name: List files in the repository
