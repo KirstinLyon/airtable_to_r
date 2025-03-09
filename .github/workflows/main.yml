@@ -8,6 +8,6 @@ on:
 
 jobs:
   call-install-packages:
-    uses: ./.github/workflows/install-packages.yml
+    uses: ./.github/workflows/install_packages.yml
     with:
       r_script: "Scripts/airtable_and_r.R"  # Path to the R script to run
