@@ -24,7 +24,7 @@ jobs:
       # Step 3: Install required R packages
       - name: Install required R packages
         run: |
-          R -e 'install.packages("rairtable")' || { echo "Failed to install rairtable"; exit 1; }
+ #         R -e 'install.packages("rairtable")' || { echo "Failed to install rairtable"; exit 1; }
           R -e 'install.packages("readr")' || { echo "Failed to install readr"; exit 1; }
 
       # Step 4: List files to verify script location
@@ -36,7 +36,7 @@ jobs:
       - name: Run Airtable script
         env:
           AIRTABLE_PAT: ${{ secrets.AIRTABLE_PAT }}  # Securely inject the Airtable PAT from GitHub Secrets
-        run: Rscript Scripts/test.R  # Run the R script
+        run: Rscript Scripts/airtable_and_r.R  # Run the R script
 
       # Step 6: Upload the pulled data as an artifact
       - name: Upload Airtable data
