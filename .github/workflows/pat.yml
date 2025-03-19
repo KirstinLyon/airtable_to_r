@@ -1,4 +1,4 @@
-name: Run R Script
+name: Setup personal access token
 
 on: [push]
 
@@ -16,7 +16,10 @@ jobs:
       - name: Install dependencies
         run: Rscript -e 'install.packages(c("gh", "httr"))'
 
+      - name: Set execute permissions for script
+        run: chmod +x Scripts/setup_env.R
+
       - name: Run R script
         env:
           GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
-        run: Scripts/setup_env.R
+        run: Rscript Scripts/setup_env.R
