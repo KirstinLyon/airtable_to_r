@@ -2,10 +2,10 @@
 library(httr)
 
 # Retrieve the PAT from GitHub Secrets
-github_pat <- Sys.getenv("GITHUB_PAT")
+GITHUB_PAT <- Sys.getenv("GITHUB_PAT")
 
 # Check if the PAT is available
-if (github_pat == "") {
+if (GITHUB_PAT == "") {
     stop("GitHub PAT not found. Please ensure it is set in GitHub Secrets.")
 }
 
