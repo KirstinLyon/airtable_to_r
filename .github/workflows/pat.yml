@@ -15,10 +15,10 @@ jobs:
 
     - name: Install required R packages
       run: |
-        install.packages("httr")
+        R -e "install.packages('httr', repos='https://cloud.r-project.org')"
 
     - name: Run R script
       env:
         GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
       run: |
-        Rscript Scripts/setup_env.R
+        Rscript path/to/your_script.R
