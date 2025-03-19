@@ -19,4 +19,4 @@ jobs:
       - name: Run R script
         env:
           GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
-        run: /Scripts/setup_env.R
+        run: Scripts/setup_env.R
