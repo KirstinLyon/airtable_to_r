@@ -21,4 +21,4 @@ jobs:
       env:
         GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
       run: |
-        Rscript path/to/your_script.R
+        Rscript Scripts/setup_env.R
