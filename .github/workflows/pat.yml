@@ -25,11 +25,10 @@ jobs:
 
     - name: Debug secret
       run: |
-        echo "MY_SECRET: $MY_SECRET"
+        echo "AIRTABLE_PAT: $AIRTABLE_PAT"
 
     - name: Run R script
       run: |
         Rscript Scripts/setup_env.R
       env:
         AIRTABLE_PAT: ${{ secrets.AIRTABLE_PAT }}
-        MY_SECRET: ${{ secrets.MY_SECRET }}
