@@ -1,4 +1,4 @@
-name: Setup personal access token
+name: Run R Script with GitHub PAT
 
 on: [push]
 
@@ -7,19 +7,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v3
 
-      - name: Set up R
-        uses: r-lib/actions/setup-r@v2
+    - name: Set up R
+      uses: r-lib/actions/setup-r@v2
 
-      - name: Install dependencies
-        run: Rscript -e 'install.packages(c("gh", "httr"))'
+    - name: Install required R packages
+      run: |
+        install.packages("httr")
 
-      - name: Set execute permissions for script
-        run: chmod +x Scripts/setup_env.R
-
-      - name: Run R script
-        env:
-          GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
-        run: Rscript Scripts/setup_env.R
+    - name: Run R script
+      env:
+        GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
+      run: |
+        Rscript Scripts/setup_env.R
