@@ -2,10 +2,10 @@
 library(httr)
 
 # Retrieve the PAT from GitHub Secrets
-GITHUB_PAT <- Sys.getenv("GITHUB_PAT")
+AIRTABLE_PAT <- Sys.getenv("AIRTABLE_PAT")
 
 # Check if the PAT is available
-if (GITHUB_PAT == "") {
+if (AIRTABLE_PAT == "") {
     stop("GitHub PAT not found. Please ensure it is set in GitHub Secrets.")
 }
 

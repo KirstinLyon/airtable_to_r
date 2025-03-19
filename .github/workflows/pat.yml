@@ -1,4 +1,4 @@
-name: Run R Script with GitHub PAT
+name: Run R Script to setup secrets
 
 on: [push, pull_request]
 
@@ -26,4 +26,4 @@ jobs:
       run: |
         Rscript Scripts/setup_env.R
       env:
-        GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
+        GITHUB_PAT: ${{ secrets.AIRTABLE_PAT }}
