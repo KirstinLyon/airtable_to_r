@@ -17,12 +17,12 @@ jobs:
     - name: Install system dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y libcurl4-openssl-dev pkg-config
+        sudo apt-get install -y libcurl4-openssl-dev pkg-config libjpeg-dev libpng-dev
 
     - name: Install R packages
       run: |
-        Rscript -e 'install.packages("httr", repos="https://cloud.r-project.org", dependencies=TRUE)'
-        
+        Rscript -e 'install.packages(c("httr", "jpeg", "png", "rairtable"), repos="https://cloud.r-project.org", dependencies=TRUE)'
+
     - name: Debug secret
       run: |
         echo "MY_SECRET: $MY_SECRET"
@@ -32,3 +32,4 @@ jobs:
         Rscript Scripts/setup_env.R
       env:
         AIRTABLE_PAT: ${{ secrets.AIRTABLE_PAT }}
+        MY_SECRET: ${{ secrets.MY_SECRET }}
