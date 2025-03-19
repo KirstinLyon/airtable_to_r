@@ -1,6 +1,12 @@
 # Access the GitHub PAT from environment variables
 github_pat <- Sys.getenv("GITHUB_PAT")
 
+
+if (!require("httr")) {
+    install.packages("httr")
+}
+library(httr)
+
 # Use the PAT for authentication
 library(httr)
 headers <- c(`Authorization` = paste("token", github_pat))
