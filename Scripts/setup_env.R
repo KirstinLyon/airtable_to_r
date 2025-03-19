@@ -28,15 +28,15 @@ if (status_code(response) == 200) {
 #----------------------------------
 
 # Load necessary libraries
-#if (!require(httr)) {
-#    install.packages("httr", repos = "https://cloud.r-project.org")
-#    library(httr)
-#}
+if (!require(httr)) {
+    install.packages("httr", repos = "https://cloud.r-project.org")
+    library(httr)
+}
 
 
 
 # Retrieve the Airtable PAT from GitHub Secrets
-#AIRTABLE_PAT <- Sys.getenv("AIRTABLE_PAT")
+AIRTABLE_PAT <- Sys.getenv("AIRTABLE_PAT")
 
 # Check if the PAT is available
 #if (AIRTABLE_PAT == "") {

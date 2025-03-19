@@ -4,6 +4,8 @@
 # Load packages
 library(dplyr)
 library(readr)
+library(httr)
+library(curl)
 
 # Your script logic here
 print("Packages loaded successfully!")

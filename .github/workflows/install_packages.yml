@@ -28,7 +28,7 @@ jobs:
       - name: Install R packages (if not cached)
         if: steps.cache-r-packages.outputs.cache-hit != 'true'
         run: |
-          Rscript -e 'install.packages(c("dplyr", "readr"), lib = Sys.getenv("R_LIBS_USER"))'
+          Rscript -e 'install.packages(c("dplyr", "readr", "httr", "curl"), lib = Sys.getenv("R_LIBS_USER"))'
 
       - name: Run R script
         run: Rscript Scripts/r_packages.R
