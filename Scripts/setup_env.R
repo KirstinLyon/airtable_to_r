@@ -12,7 +12,7 @@ if (AIRTABLE_PAT == "") {
 # Use the PAT to authenticate with the GitHub API
 response <- GET(
     url = "https://api.github.com/user",
-    add_headers(Authorization = paste("token", github_pat))
+    add_headers(Authorization = paste("token", AIRTABLE_PAT))
 )
 
 # Check the response
