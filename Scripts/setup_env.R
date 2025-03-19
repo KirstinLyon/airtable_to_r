@@ -1,5 +1,6 @@
 # Load necessary libraries
 library(httr)
+library(rairtable)
 
 # Retrieve the PAT from GitHub Secrets
 AIRTABLE_PAT <- Sys.getenv("AIRTABLE_PAT")
@@ -11,8 +12,9 @@ if (AIRTABLE_PAT == "") {
 
 # Use the PAT to authenticate with the GitHub API
 response <- GET(
-    url = "https://api.github.com/user",
-    add_headers(Authorization = paste("token", AIRTABLE_PAT))
+#    url = "https://api.github.com/user",
+#    add_headers(Authorization = paste("token", AIRTABLE_PAT))
+    rairtable::set_airtable_api_key(PERSONAL_ACCESS_TOKEN, install = TRUE)
 )
 
 # Check the response

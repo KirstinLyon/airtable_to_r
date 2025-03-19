@@ -22,6 +22,10 @@ jobs:
     - name: Install R packages
       run: |
         Rscript -e 'install.packages("httr", repos="https://cloud.r-project.org", dependencies=TRUE)'
+        
+    - name: Debug secret
+      run: |
+        echo "MY_SECRET: $MY_SECRET"
 
     - name: Run R script
       run: |
