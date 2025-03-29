@@ -31,3 +31,5 @@ data <- rairtable::airtable(TABLE_NAME, BASE_ID)
 
 all_data <- rairtable::read_airtable(data, id_to_col = TRUE, max_rows = 1000)
 
+write_csv(all_data, "Dataout/starwars.csv")
+
