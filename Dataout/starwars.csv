@@ -1,0 +1,88 @@
+airtable_record_id,name,height,mass,hair_color,skin_color,eye_color,birth_year,sex,gender,homeworld,species
+rec0cDW5F8QpHbga5,Plo Koon,188,80,,,,22,male,masculine,Dorin,Kel Dor
+rec1Haq8OrtBcGGjp,Ki-Adi-Mundi,198,82,,,,92,male,masculine,Cerea,Cerean
+rec1LEZUBprLLyA11,Ratts Tyerel,79,15,,,,NA,male,masculine,Aleen Minor,Aleena
+rec1nbyFChdmxE2Dw,BB8,NA,NA,,,,NA,none,masculine,NA,Droid
+rec3jaw8zzYJ8wtUp,San Hill,191,NA,,,,NA,male,masculine,Muunilinst,Muun
+rec5Gk6yiCdvcDF9Z,Watto,137,NA,,,,NA,male,masculine,Toydaria,Toydarian
+rec5KryljMhpD9Cs3,Qui-Gon Jinn,193,89,,,,92,male,masculine,NA,Human
+rec5MvVSGX4wFGguW,Obi-Wan Kenobi,182,77,,,,57,male,masculine,Stewjon,Human
+rec6BHqzDZ2wR0liK,Wicket Systri Warrick,88,20,,,,8,male,masculine,Endor,Ewok
+rec6SK48eVux9hmUv,Sebulba,112,40,,,,NA,male,masculine,Malastare,Dug
+rec86j68ipomEH6h6,Bail Prestor Organa,191,NA,,,,67,male,masculine,Alderaan,Human
+rec8FF1xS3DZl72rC,Mas Amedda,196,NA,,,,NA,male,masculine,Champala,Chagrian
+rec8IF3nXyhImVhYb,Ben Quadinaros,163,65,,,,NA,male,masculine,Tund,Toong
+recBBCxfqE035zPJl,Eeth Koth,171,NA,,,,NA,male,masculine,Iridonia,Zabrak
+recBHjk4xb3wRAune,Bossk,190,113,,,,53,male,masculine,Trandosha,Trandoshan
+recC99DaCKBZLfDK7,Ackbar,180,83,,,,41,male,masculine,Mon Cala,Mon Calamari
+recCCrEZNs2aR4ta2,R2-D2,96,32,,,,33,none,masculine,Naboo,Droid
+recCH6OSeMYTqbNUs,Tion Medon,206,80,,,,NA,male,masculine,Utapau,Pau'an
+recCnuWeFkOU7nkOX,Rugor Nass,206,NA,,,,NA,male,masculine,Naboo,Gungan
+recCuHpKtcjW8WDkA,Leia Organa,150,49,,,,19,female,feminine,Alderaan,Human
+recEEsEMmeal3aazf,Dormé,165,NA,,,,NA,female,feminine,Naboo,Human
+recEaxxZM2KAg0sIM,Luminara Unduli,170,56.2,,,,58,female,feminine,Mirial,Mirialan
+recFOGei2lyLpJIjJ,Lama Su,229,88,,,,NA,male,masculine,Kamino,Kaminoan
+recFhHx3VgZHM6xxG,Nien Nunb,160,68,,,,NA,male,masculine,Sullust,Sullustan
+recGztp6HcyqebAHJ,Bib Fortuna,180,NA,,,,NA,male,masculine,Ryloth,Twi'lek
+recHJ8GxclmAWX2Ia,Padmé Amidala,185,45,,,,46,female,feminine,Naboo,Human
+recHRQXZ0wd5vzTQq,Kit Fisto,196,87,,,,NA,male,masculine,Glee Anselm,Nautolan
+recIUwvEr0xvM2NjP,Poggle the Lesser,183,80,,,,NA,male,masculine,Geonosis,Geonosian
+recImOGecmZeznKER,Ayla Secura,178,55,,,,48,female,feminine,Ryloth,Twi'lek
+recJFJa0xwspf9ReG,Palpatine,170,75,,,,82,male,masculine,Naboo,Human
+recJO3Xt0uCMWy2s7,Jabba Desilijic Tiure,175,1358,,,,600,hermaphroditic,masculine,Nal Hutta,Hutt
+recKL5PJFlNC71LrX,Zam Wesell,168,55,,,,NA,female,feminine,Zolan,Clawdite
+recKt2lUgigqdJEva,Arvel Crynyd,NA,NA,,,,NA,male,masculine,NA,Human
+recKxcOVWTbBVUJsJ,Poe Dameron,NA,NA,,,,NA,male,masculine,NA,Human
+recNSS9RqRAOfJqFR,Gregar Typho,185,85,,,,NA,NA,NA,Naboo,NA
+recNtsb8MjcP1dA74,Raymus Antilles,188,79,,,,NA,male,masculine,Alderaan,Human
+recOT9wJQjVDSxL0H,Chewbacca,228,112,,,,200,male,masculine,Kashyyyk,Wookiee
+recOcHumlOPWX8ksd,Yarael Poof,264,NA,,,,NA,male,masculine,Quermia,Quermian
+recPiukGPwIyKxGy2,Dud Bolt,94,45,,,,NA,male,masculine,Vulpter,Vulptereen
+recQTY4EHoAWnMSNm,Shmi Skywalker,163,NA,,,,72,female,feminine,Tatooine,Human
+recRzGRZO2s56fSLz,Wilhuff Tarkin,180,NA,,,,64,male,masculine,Eriadu,Human
+recSgRRkiBNaTGJx2,Wedge Antilles,170,77,,,,21,male,masculine,Corellia,Human
+recUgF96J4aNW2PJG,Jocasta Nu,167,NA,,,,NA,female,feminine,Coruscant,Human
+recUrI0u41f0523Ur,Beru Whitesun Lars,165,75,,,,47,female,feminine,Tatooine,Human
+recVAzPCoa8DyWwaI,R5-D4,97,32,,,,NA,none,masculine,Tatooine,Droid
+recVOqtUbMry6bLiH,Adi Gallia,184,50,,,,NA,female,feminine,Coruscant,Tholothian
+recVaCnVsz9sPcdy1,Gasgano,122,NA,,,,NA,male,masculine,Troiken,Xexto
+recWCyw42CcedZTov,Barriss Offee,166,50,,,,40,female,feminine,Mirial,Mirialan
+recYDIBpHiZMKW9Wl,Cliegg Lars,183,NA,,,,82,male,masculine,Tatooine,Human
+recZIrOulM6x7MB3C,Jango Fett,183,79,,,,66,male,masculine,Concord Dawn,Human
+recaITx7Zrs3pNWr0,Saesee Tiin,188,NA,,,,NA,male,masculine,Iktotch,Iktotchi
+recaPNv125XXKjHAI,Sly Moore,178,48,,,,NA,NA,NA,Umbara,NA
+reccHNyVZ9hUJAIs4,Tarfful,234,136,,,,NA,male,masculine,Kashyyyk,Wookiee
+receLBEX9UWOr6ytd,Mon Mothma,150,NA,,,,48,female,feminine,Chandrila,Human
+recemtFgbg8hCKbSp,Han Solo,180,80,,,,29,male,masculine,Corellia,Human
+recetc2fbpfpKoH1R,R4-P17,96,NA,,,,NA,none,feminine,NA,Droid
+recf6JAyeZkkN3Aax,Grievous,216,159,,,,NA,male,masculine,Kalee,Kaleesh
+recfNtEN2viDTirRS,IG-88,200,140,,,,15,none,masculine,NA,Droid
+recgQ3LvusRSLDZyK,Captain Phasma,NA,NA,,,,NA,female,feminine,NA,Human
+recgnFbbCxqclOMMl,Mace Windu,188,84,,,,72,male,masculine,Haruun Kal,Human
+reci3dk7UgapBAK5P,Quarsh Panaka,183,NA,,,,62,male,masculine,Naboo,Human
+reciOEwes0DA5ZaMp,Jek Tono Porkins,180,110,,,,NA,NA,NA,Bestine IV,NA
+reciOxiSI7mRvW6iw,Cordé,157,NA,,,,NA,NA,NA,Naboo,NA
+recismgaZ8fxkle6k,Darth Maul,175,80,,,,54,male,masculine,Dathomir,Zabrak
+recjBZqt7zD2d3pqf,C-3PO,167,75,,,,112,none,masculine,Tatooine,Droid
+reckJsJmeLlyOptIE,Darth Vader,202,136,,,,41.9,male,masculine,Tatooine,Human
+reclcPblxvGYvDBFe,Taun We,213,NA,,,,NA,female,feminine,Kamino,Kaminoan
+reclutPKREuMjICRo,Shaak Ti,178,57,,,,NA,female,feminine,Shili,Togruta
+recmAMr1ljXojitbk,Owen Lars,178,120,,,,52,male,masculine,Tatooine,Human
+reco5hTlKQUPg7vpa,Anakin Skywalker,188,84,,,,41.9,male,masculine,Tatooine,Human
+recoWpIcJW8km9i4e,Lando Calrissian,177,79,,,,31,male,masculine,Socorro,Human
+recqY9WiHsHmzWthT,Dooku,193,80,,,,102,male,masculine,Serenno,Human
+recr218HSmeoXlyeM,Luke Skywalker,172,77,,,,19,male,masculine,Tatooine,Human
+recr9BgYNsE7V59uM,Ric Olié,183,NA,,,,NA,male,masculine,Naboo,Human
+recrU4QvBIsCn1Lcw,Roos Tarpals,224,82,,,,NA,male,masculine,Naboo,Gungan
+recsEC2fTvLmIaLiX,Biggs Darklighter,183,84,,,,24,male,masculine,Tatooine,Human
+rectJiuRpKK6XJs9P,Nute Gunray,191,90,,,,NA,male,masculine,Cato Neimoidia,Neimodian
+recuC6urNdkU7hqdQ,Jar Jar Binks,196,66,,,,52,male,masculine,Naboo,Gungan
+recvLw0FgI30fpEbW,Wat Tambor,193,48,,,,NA,male,masculine,Skako,Skakoan
+recvz5mpuK7DqJUe8,Rey,NA,NA,,,,NA,female,feminine,NA,Human
+recwPIHc1RMgcyrx9,Boba Fett,183,78.2,,,,31.5,male,masculine,Kamino,Human
+recxDP91V7CBIlJ95,Dexter Jettster,198,102,,,,NA,male,masculine,Ojom,Besalisk
+recxTdIUkWbTgHNNn,Lobot,175,79,,,,37,male,masculine,Bespin,Human
+recxnTzJSDcEKPGub,Finn,NA,NA,,,,NA,male,masculine,NA,Human
+recyG0JD5dLQRhdnl,Yoda,66,17,,,,896,male,masculine,NA,Yoda's species
+reczSoyYufn1gm1kx,Greedo,173,74,,,,44,male,masculine,Rodia,Rodian
+reczpUKywXzbAIE1U,Finis Valorum,170,NA,,,,91,male,masculine,Coruscant,Human
