@@ -13,7 +13,7 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-      
+
     - name: Install system dependencies
       run: |
         sudo apt-get update
@@ -24,23 +24,29 @@ jobs:
       with:
         r-version: '4.4.3'  # Specify the R version you need
 
-
     - name: Install R packages
       run: |
-        Rscript -e 'install.packages(c("httr", "jpeg", "png", "rairtable"), repos="https://cloud.r-project.org", dependencies=TRUE)'
-        
+        Rscript -e 'install.packages(c("httr", "jpeg", "png", "rairtable", "dplyr"), repos="https://cloud.r-project.org", dependencies=TRUE)'
+
     - name: Create Dataout directory
       run: mkdir -p Dataout
 
-#    - name: Debug secret
-#      run: |
-#        echo "AIRTABLE_PAT: $AIRTABLE_PAT"
+    - name: Debug secret
+      run: |
+        if [ -z "$AIRTABLE_PAT" ]; then
+          echo "AIRTABLE_PAT is not set."
+          exit 1
+        else
+          echo "AIRTABLE_PAT is set."
+        fi
+      env:
+        AIRTABLE_PAT: ${{ secrets.AIRTABLE_PAT }}
 
     - name: Run R script
       run: |
-        Rscript Scripts/airtable_and_r_simple.R
- #     env:
-#        AIRTABLE_PAT: ${{ secrets.AIRTABLE_PAT }}
+        Rscript Scripts/airtable_and_r_github.R
+      env:
+        AIRTABLE_PAT: ${{ secrets.AIRTABLE_PAT }}
 
     - name: Check for Dataout files
       run: |
@@ -53,11 +59,12 @@ jobs:
 
     - name: Commit data to repository
       env:
-        WHO_DAILY_DASH_AUTOMATION_TOKEN: ${{ secrets.AIRTABLE_R_AUTOMATION_TOKEN }}
+        AIRTABLE_R_AUTOMATION_TOKEN: ${{ secrets.AIRTABLE_R_AUTOMATION_TOKEN }}
       run: |
         git config --global user.email "you@example.com"
         git config --global user.name "Your Name"
         git add Dataout/*.csv
         git commit -m "Update WHO data"
-        git push https://${{ secrets.secrets.AIRTABLE_R_AUTOMATION_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
+        git push https://${{ secrets.AIRTABLE_R_AUTOMATION_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
+
 

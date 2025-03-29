@@ -11,9 +11,9 @@ library(dplyr)
 
 
 # GLOBAL VARIABLES ----------------------------------------------------------
-TABLE_NAME <- 'test'  #name of table in Airtable
+TABLE_NAME <- 'starwars'  #name of table in Airtable
 PERSONAL_ACCESS_TOKEN<- Sys.getenv("AIRTABLE_PAT")  #personal access token stored in GitHub
-BASE_ID <- "appn19UZdWMJDGQyD"  #base id of table in Airtable
+BASE_ID <- "appAjIp3Kv6qyqGoU"  #base id of table in Airtable
 
 
 # READ DATA ---------------------------------------------------------------------
