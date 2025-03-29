@@ -10,11 +10,18 @@ library(rairtable)
 library(dplyr)
 
 
+
+
+
 # GLOBAL VARIABLES ----------------------------------------------------------
 TABLE_NAME <- 'starwars'  #name of table in Airtable
 PERSONAL_ACCESS_TOKEN<- Sys.getenv("AIRTABLE_PAT")  #personal access token stored in GitHub
 BASE_ID <- "appAjIp3Kv6qyqGoU"  #base id of table in Airtable
 
+# Validate API key
+if (PERSONAL_ACCESS_TOKEN == "") {
+    stop("No Airtable API key set. Use `airtable_api_key()` to set your API key.")
+}
 
 # READ DATA ---------------------------------------------------------------------
 
