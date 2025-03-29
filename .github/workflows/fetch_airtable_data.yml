@@ -49,7 +49,7 @@ jobs:
       run: |
         Rscript Scripts/airtable_and_r_github.R
       env:
-        AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_PAT }}
+        AIRTABLE_PAT: ${{ secrets.AIRTABLE_PAT }}
 
     - name: Check for Dataout files
       run: |
@@ -64,8 +64,8 @@ jobs:
       env:
         AIRTABLE_R_AUTOMATION_TOKEN: ${{ secrets.AIRTABLE_R_AUTOMATION_TOKEN }}
       run: |
-        git config --global user.email "you@example.com"  # Replace with actual email
-        git config --global user.name "Your Name"  # Replace with actual name
+        git config --global user.email "kirstin@mltwelve.com"  # Replace with actual email
+        git config --global user.name "Kirstin Lyon"  # Replace with actual name
         git add Dataout/*.csv
         git commit -m "Update WHO data"
         git push https://${{ secrets.AIRTABLE_R_AUTOMATION_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
