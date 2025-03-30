@@ -22,11 +22,21 @@ if (PERSONAL_ACCESS_TOKEN == "") {
 
 # READ DATA ---------------------------------------------------------------------
 
-rairtable::set_airtable_api_key(PERSONAL_ACCESS_TOKEN, install = TRUE)
-
-data <- rairtable::airtable(TABLE_NAME, BASE_ID)
-
-all_data <- rairtable::read_airtable(data, id_to_col = TRUE, max_rows = 1000)
-
-write_csv(all_data, "Dataout/starwars.csv")
+tryCatch({
+    rairtable::set_airtable_api_key(PERSONAL_ACCESS_TOKEN, install = TRUE)
+    cat("API key set successfully.\n")
+    
+    data <- rairtable::airtable(TABLE_NAME, BASE_ID)
+    cat("Fetched table metadata successfully.\n")
+    
+    all_data <- rairtable::read_airtable(data, id_to_col = TRUE, max_rows = 1000)
+    cat("Fetched data successfully.\n")
+    
+    write_csv(all_data, "Dataout/starwars.csv")
+    cat("Data written to Dataout/starwars.csv successfully.\n")
+    
+}, error = function(e) {
+    cat("An error occurred: ", e$message, "\n")
+    stop(e)
+})
 
