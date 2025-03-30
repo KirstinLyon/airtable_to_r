@@ -11,27 +11,36 @@ library(dplyr)
 library(readr)
 
 # GLOBAL VARIABLES ----------------------------------------------------------
-TABLE_NAME <- 'starwars'  #name of table in Airtable
-PERSONAL_ACCESS_TOKEN<- Sys.getenv("AIRTABLE_PAT")  #personal access token stored in GitHub
-BASE_ID <- "appAjIp3Kv6qyqGoU"  #base id of table in Airtable
+TABLE_NAME <- 'starwars'  # name of table in Airtable
+PERSONAL_ACCESS_TOKEN <- Sys.getenv("AIRTABLE_PAT")  # personal access token stored in GitHub
+BASE_ID <- "appAjIp3Kv6qyqGoU"  # base id of table in Airtable
+
+# Set Airtable API key in environment
+Sys.setenv(AIRTABLE_API_KEY = PERSONAL_ACCESS_TOKEN)
 
 # Validate API key
 if (PERSONAL_ACCESS_TOKEN == "") {
     stop("No Airtable API key set. Use `airtable_api_key()` to set your API key.")
+} else {
+    cat("Airtable API key is set.\n")
 }
 
 # READ DATA ---------------------------------------------------------------------
 
 tryCatch({
+    cat("Setting Airtable API key...\n")
     rairtable::set_airtable_api_key(PERSONAL_ACCESS_TOKEN, install = TRUE)
     cat("API key set successfully.\n")
     
+    cat("Fetching table metadata...\n")
     data <- rairtable::airtable(TABLE_NAME, BASE_ID)
     cat("Fetched table metadata successfully.\n")
     
+    cat("Reading data from Airtable...\n")
     all_data <- rairtable::read_airtable(data, id_to_col = TRUE, max_rows = 1000)
     cat("Fetched data successfully.\n")
     
+    cat("Writing data to CSV...\n")
     write_csv(all_data, "Dataout/starwars.csv")
     cat("Data written to Dataout/starwars.csv successfully.\n")
     

@@ -31,19 +31,14 @@ jobs:
     - name: Create Dataout directory
       run: mkdir -p Dataout
 
-    - name: Set Airtable API Key
-      run: echo "AIRTABLE_PAT=${{ secrets.AIRTABLE_PAT }}" >> $GITHUB_ENV
-
     - name: Debug secret
       run: |
-        if [ -z "$AIRTABLE_PAT" ]; then
+        if [ -z "${{ secrets.AIRTABLE_PAT }}" ]; then
           echo "AIRTABLE_PAT is not set."
           exit 1
         else
           echo "AIRTABLE_PAT is set."
         fi
-      env:
-        AIRTABLE_PAT: ${{ secrets.AIRTABLE_PAT }}
 
     - name: Run R script
       run: |
