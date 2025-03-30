@@ -8,10 +8,7 @@
 # LOAD LIBRARIES ----------------------------------------------------------
 library(rairtable)
 library(dplyr)
-
-
-
-
+library(readr)
 
 # GLOBAL VARIABLES ----------------------------------------------------------
 TABLE_NAME <- 'starwars'  #name of table in Airtable
