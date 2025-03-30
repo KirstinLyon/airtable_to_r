@@ -32,18 +32,18 @@ jobs:
       run: mkdir -p Dataout
 
     - name: Set Airtable API Key
-      run: echo "AIRTABLE_API_KEY=${{ secrets.AIRTABLE_PAT }}" >> $GITHUB_ENV
+      run: echo "AIRTABLE_PAT=${{ secrets.AIRTABLE_PAT }}" >> $GITHUB_ENV
 
     - name: Debug secret
       run: |
-        if [ -z "$AIRTABLE_API_KEY" ]; then
-          echo "AIRTABLE_API_KEY is not set."
+        if [ -z "$AIRTABLE_PAT" ]; then
+          echo "AIRTABLE_PAT is not set."
           exit 1
         else
-          echo "AIRTABLE_API_KEY is set."
+          echo "AIRTABLE_PAT is set."
         fi
       env:
-        AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_PAT }}
+        AIRTABLE_PAT: ${{ secrets.AIRTABLE_PAT }}
 
     - name: Run R script
       run: |
