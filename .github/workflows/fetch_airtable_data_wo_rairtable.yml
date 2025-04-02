@@ -2,9 +2,6 @@ name: Process Airtable Data
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
 
 jobs:
   process-data:
@@ -19,7 +16,7 @@ jobs:
 
       - name: Install R dependencies
         run: |
-          install.packages(c("httr", "jsonlite"))
+          Rscript -e 'install.packages(c("httr", "jsonlite"))'
 
       - name: Run R script
         env:
