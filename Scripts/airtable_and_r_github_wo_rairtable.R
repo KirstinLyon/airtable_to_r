@@ -1,8 +1,8 @@
-# process_airtable_data.R
-
 # Load necessary libraries
 library(httr)
 library(jsonlite)
+library(dplyr)
+library(purrr)
 
 # Fetch data from Airtable
 fetch_airtable_data <- function(api_key, base_id, table_name) {
@@ -20,9 +20,9 @@ fetch_airtable_data <- function(api_key, base_id, table_name) {
 # Process the fetched data
 process_data <- function(data) {
     # Example processing: Extract fields from records
-    processed_data <- lapply(data, function(record) {
-        record$fields
-    })
+    processed_data <- data %>%
+        map(~ .x$fields) %>%
+        discard(is.null)
     return(processed_data)
 }
 
