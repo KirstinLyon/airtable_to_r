@@ -24,4 +24,4 @@ jobs:
       - name: Run R script
         env:
           AIRTABLE_PAT: ${{ secrets.AIRTABLE_PAT }}
-        run: Rscript process_airtable_data.R
+        run: Rscript Scripts/airtable_and_r_github_wo_rairtable.R
