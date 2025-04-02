@@ -27,9 +27,9 @@ process_data <- function(data) {
 }
 
 # Main execution
-api_key <- Sys.getenv("AIRTABLE_API_KEY")
-base_id <- "your_base_id"
-table_name <- "your_table_name"
+api_key <- Sys.getenv("AIRTABLE_PAT")
+base_id <- "appAjIp3Kv6qyqGoU"
+table_name <- "starwars"
 
 # Fetch and process data
 data <- fetch_airtable_data(api_key, base_id, table_name)
