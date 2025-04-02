@@ -19,12 +19,9 @@ jobs:
 
       - name: Install R dependencies
         run: |
-          Rscript -e "install.packages('httr')"
-          Rscript -e "install.packages('jsonlite')"
-          Rscript -e "install.packages('dplyr')"
-          Rscript -e "install.packages('purrr')"
+          Rscript -e 'install.packages(c("httr", "jpeg", "png", "rairtable", "dplyr", "readr"), repos="https://cloud.r-project.org", dependencies=TRUE)'
 
       - name: Run R script
         env:
           AIRTABLE_PAT: ${{ secrets.AIRTABLE_PAT }}
-        run: Rscript Scripts/airtable_and_r_github_wo_rairtable.R
+        run: Rscript Scripts/airtable_and_r_github.R

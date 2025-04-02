@@ -3,6 +3,7 @@ library(httr)
 library(jsonlite)
 library(dplyr)
 library(purrr)
+library(rairtable)
 
 # Fetch data from Airtable
 fetch_airtable_data <- function(api_key, base_id, table_name) {
