@@ -25,7 +25,20 @@ jobs:
         run: |
           Rscript -e 'install.packages(c("httr", "jpeg", "png", "rairtable", "dplyr", "readr"), repos="https://cloud.r-project.org", dependencies=TRUE)'
 
+      - name: Create Dataout directory
+        run: mkdir -p Dataout
+      
       - name: Run R script
         env:
           AIRTABLE_PAT: ${{ secrets.AIRTABLE_PAT }}
         run: Rscript Scripts/airtable_and_r_github.R
+        
+        
+      - name: Check for Dataout files
+        run: |
+            if ls Dataout/*.csv 1> /dev/null 2>&1; then
+                echo "Files found."
+            else
+                echo "No files found in Dataout directory."
+            exit 1
+        fi
