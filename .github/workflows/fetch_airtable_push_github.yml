@@ -3,7 +3,6 @@ name: Process Airtable Data v2
 permissions:
   contents: write
 
-
 on:
   workflow_dispatch:
 
