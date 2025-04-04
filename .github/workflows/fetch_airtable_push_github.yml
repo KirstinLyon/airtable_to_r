@@ -32,3 +32,7 @@ jobs:
           AIRTABLE_PAT: ${{ secrets.AIRTABLE_PAT }}
         run: Rscript Scripts/airtable_and_r_github.R
         
+      - name: Commit data to repository
+        env:
+          AIRTABLE_R_AUTOMATION_TOKEN: ${{ secrets.AIRTABLE_R_AUTOMATION_TOKEN }}
+        
