@@ -35,4 +35,3 @@ jobs:
       - name: Commit data to repository
         env:
           AIRTABLE_R_AUTOMATION_TOKEN: ${{ secrets.AIRTABLE_R_AUTOMATION_TOKEN }}
-        
