@@ -41,3 +41,13 @@ jobs:
  #               echo "No files found in Dataout directory."
  #           exit 1
  #       fi
+ 
+     - name: Commit data to repository
+      env:
+        AIRTABLE_R_AUTOMATION_TOKEN: ${{ secrets.AIRTABLE_R_AUTOMATION_TOKEN }}
+      run: |
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git add Dataout/*.csv
+        git commit -m "Update starwars data"
+        git push https://${{ secrets.AIRTABLE_R_AUTOMATION_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
