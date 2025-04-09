@@ -16,7 +16,7 @@ PERSONAL_ACCESS_TOKEN <- Sys.getenv("AIRTABLE_PAT")  # personal access token sto
 BASE_ID <- Sys.getenv("AIRTABLE_BASE_ID")  # base id of table in Airtable
 
 # Set Airtable API key in environment
-#Sys.setenv(AIRTABLE_API_KEY = PERSONAL_ACCESS_TOKEN)
+Sys.setenv(AIRTABLE_API_KEY = PERSONAL_ACCESS_TOKEN)
 
 # Validate API key
 if (PERSONAL_ACCESS_TOKEN == "") {
