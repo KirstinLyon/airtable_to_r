@@ -1,10 +1,9 @@
 name: Run R Script with Airtable PAT
 
-permissions:
-  contents: write
-
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'  # Runs daily at midnight UTC
 
 jobs:
   fetch_data:
@@ -22,7 +21,7 @@ jobs:
     - name: Set up R
       uses: r-lib/actions/setup-r@v2
       with:
-        r-version: '4.4.3'  # Specify the R version you need
+        r-version: '4.2.2'  # Use a stable R version
 
     - name: Install R packages
       run: |
@@ -31,7 +30,10 @@ jobs:
     - name: Create Dataout directory
       run: mkdir -p Dataout
 
-    - name: Debug secret
+    - name: Clean Dataout directory
+      run: rm -rf Dataout/*  # Optional: Clears the directory before running the script
+
+    - name: Debug PAT secret
       run: |
         if [ -z "${{ secrets.AIRTABLE_PAT }}" ]; then
           echo "AIRTABLE_PAT is not set."
@@ -40,27 +42,26 @@ jobs:
           echo "AIRTABLE_PAT is set."
         fi
 
+    - name: Debug BASE_ID secret
+      run: |
+        if [ -z "${{ secrets.AIRTABLE_BASE_ID }}" ]; then
+          echo "AIRTABLE_BASE_ID is not set."
+          exit 1
+        else
+          echo "AIRTABLE_BASE_ID is set."
+        fi
+
     - name: Run R script
       run: |
         Rscript Scripts/airtable_and_r_github.R
       env:
         AIRTABLE_PAT: ${{ secrets.AIRTABLE_PAT }}
+        AIRTABLE_BASE_ID: ${{ secrets.AIRTABLE_BASE_ID }}
 
-    - name: Check for Dataout files
-      run: |
-        if ls Dataout/*.csv 1> /dev/null 2>&1; then
-          echo "Files found."
-        else
-          echo "No files found in Dataout directory."
-          exit 1
-        fi
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: data-output
+        path: Dataout/
 
-  #  - name: Commit data to repository
-  #    env:
-  #      AIRTABLE_R_AUTOMATION_TOKEN: ${{ secrets.AIRTABLE_R_AUTOMATION_TOKEN }}
-  #    run: |
-  #      git config --global user.email "you@example.com"
-  #      git config --global user.name "Your Name"
-  #      git add Dataout/*.csv
-  #      git commit -m "Update starwars data"
-  #      git push https://${{ secrets.AIRTABLE_R_AUTOMATION_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
+

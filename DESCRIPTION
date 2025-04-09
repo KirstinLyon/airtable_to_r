@@ -4,4 +4,6 @@ Depends:
   readr,
   dplyr,
   httr,
-  curl
+  curl,
+  rairtable,
+  jsonlite,

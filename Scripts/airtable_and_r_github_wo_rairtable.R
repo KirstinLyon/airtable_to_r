@@ -29,7 +29,7 @@ process_data <- function(data) {
 
 # Main execution
 api_key <- Sys.getenv("AIRTABLE_PAT")
-base_id <- "appAjIp3Kv6qyqGoU"
+base_id <- Sys.getenv("AIRTABLE_BASE_ID")
 table_name <- "starwars"
 
 # Fetch and process data
