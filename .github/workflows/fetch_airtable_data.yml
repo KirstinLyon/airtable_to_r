@@ -63,5 +63,7 @@ jobs:
       with:
         name: data-output
         path: Dataout/
+      continue-on-error: false
+      retry: 3
 
 
