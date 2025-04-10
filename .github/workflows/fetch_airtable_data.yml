@@ -29,7 +29,7 @@ jobs:
 
     - name: Install R packages
       run: |
-        Rscript -e 'install.packages(c("httr", "jpeg", "png", "rairtable", "dplyr", "readr"), repos="https://cloud.r-project.org", dependencies=TRUE)'
+        Rscript -e 'install.packages(c("httr", "jpeg", "png", "rairtable", "readr"), repos="https://cloud.r-project.org", dependencies=TRUE)'
 
     - name: Create Dataout directory
       run: mkdir -p Dataout

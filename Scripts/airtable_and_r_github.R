@@ -7,7 +7,6 @@
 
 # LOAD LIBRARIES ----------------------------------------------------------
 library(rairtable)
-library(dplyr)
 library(readr)
 
 # GLOBAL VARIABLES ----------------------------------------------------------
