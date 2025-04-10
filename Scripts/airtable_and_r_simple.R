@@ -19,9 +19,9 @@ library(dplyr)
 #BASE_ID <- "appn19UZdWMJDGQyD"
 
 
-TABLE_NAME <- "starwars"
-PERSONAL_ACCESS_TOKEN <- "patBzsRUgIjYBziow.9d32fcafda1b98fb6c9fcf9dcf658d3ad78705a662d60c4d222c12ad755fcfce"
-BASE_ID <- "appAjIp3Kv6qyqGoU"
+TABLE_NAME <- "your_table_name" # Replace with your actual table name
+PERSONAL_ACCESS_TOKEN <- "your_personal_access_token" # Replace with your actual personal access token
+BASE_ID <- "your_base_id" # Replace with your actual base ID
 
 
 # READ IN DATA -------------------------------------------------------------
@@ -33,4 +33,4 @@ table <- airtable(TABLE_NAME, BASE_ID)
 
 airtable_data <- read_airtable(table, id_to_col = TRUE, max_rows = 1000)
 
-write_csv(airtable_data, "Dataout/starwars.csv")
+write_csv(airtable_data, "Dataout/data.csv")
