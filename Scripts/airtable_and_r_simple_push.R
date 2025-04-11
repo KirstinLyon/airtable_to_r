@@ -10,6 +10,7 @@ library(rairtable)
 library(dplyr)
 library(tidyr)
 library(wbstats)
+library(readr)
 
 # GLOBAL VARIABLES ---------------------------------------------------------
 
@@ -57,6 +58,8 @@ wb_data_sample <- wb_data_sample %>%
 ## Combine to get the completed dataset
 wb_data_final <- wb_data_sample |> 
     left_join(indicators_metadata, by = "indicator_id") 
+
+rm(indicators_metadata, TB_HIV_indicators, wb_data_sample)
 
 write_csv(wb_data_final, "Dataout/wb_data_final.csv")
 
